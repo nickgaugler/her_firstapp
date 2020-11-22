@@ -16,7 +16,7 @@ import todo.views
 
 urlpatterns = [
     path("", todo.views.index, name="index"),
-    path("db/", todo.views.db, name="db"),
+#    path("db/", todo.views.db, name="db"),
     path("admin/", admin.site.urls),
 #    path('graphs/', include('graphs.urls'))
 #    path('task/', include('tasks.urls'))
