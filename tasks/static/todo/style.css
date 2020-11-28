@@ -1,0 +1,41 @@
+.todo_container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-template-rows: auto;
+	grid-auto-flow: column;
+	justify-items: center;
+}
+
+.header {
+	grid-column: 1 / -1;
+	grid-row: 1 / 1;
+	font-weight: bold;
+	font-size: 3.5em;
+}
+
+.app_desc {
+	grid-column: 1 / -1;
+	grid-row: 2 / 2;
+}
+
+.input_form {
+	grid-column: 1 / -1;
+	grid-row: 3 / 3;
+}
+
+.todo_items {
+	grid-column: 1 / -1;
+	grid-row: 4 / 4;
+}
+
+.todo_row {
+	margin-top: 10px;
+	padding-top: 5px;
+	padding-right: 200px;
+	border-style: outset;
+}
+
+.task_item {
+	padding-left: 20px;
+	font-size: 1.4em;
+}

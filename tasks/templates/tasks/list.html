@@ -1,18 +1,38 @@
-<h3>To Do</h3>
+{% load static %}
 
-<form method="Post" action="/">
-	{% csrf_token %}
-	{{form.title}}
-	<input type="submit" name="Create Task">
+<link rel="stylesheet" type="text/css" href="{% static 'todo/style.css' %}">
+
+<div class="todo_container">
+
+	<div class="header">
+		Welcome to my simple ToDo List App
+	</div>
 	
-</form>
+	<p class="app_desc">This app is built on a Django Framework using Heroku for deployment</p>
 
-{% for task in tasks %}
 
-	<div>
-		<a href="{% url 'update_task' task.id %}">Update</a>
-		<a href="{% url 'delete' task.id %}">Delete</a>
-		<p>{{task}}</p>
+	<form method="Post" class="input_form" action="/">
+		{% csrf_token %}
+		{{form.title}}
+		<input type="submit" name="Create Task">
+	</form>
+
+	<div class="todo_items">
+	{% for task in tasks %}
+	
+		<div class="todo_row">
+
+				<a href="{% url 'update_task' task.id %}" style="text-decoration:none;">
+					<img src="{% static 'todo/media/edit.png' %}" alt="Update" style="width:40px;height:40px;border-radius:10px;">
+				</a>
+				<a href="{% url 'delete' task.id %}" style="text-decoration:none;">
+					<img src="{% static 'todo/media/red_x.jpg' %}" alt="Delete" style="width:40px;height:40px;border-radius:10px;">
+				</a>
+				<!-- background color will be e3e3e3 -->
+				<span class="task_item">{{task}}</span>
+		</div>
+	
+	{% endfor %}
 	</div>
 
-{% endfor %}
+</div>
